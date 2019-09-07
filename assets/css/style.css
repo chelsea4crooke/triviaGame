@@ -1,0 +1,38 @@
+body{
+    background-image: url("../images/200w.webp");
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    font-family: 'Modak', cursive;
+}
+h1{
+    text-align: center;
+    font-size: 54px;
+    opacity: 1;
+}
+p{
+    text-align: center;
+    font-size: 24px;
+}
+.jumbo{
+    border: 8px solid whitesmoke;
+    background: rgba(168, 252, 157, 0.89);
+}
+#timeBox{
+    border: 4px solid whitesmoke;
+    background: rgba(168, 252, 157, 0.89);
+    padding: 10px;
+}
+#questionBox{
+    border: 8px solid whitesmoke;
+    background: rgba(168, 252, 157, 0.89);
+    padding: 50px;
+}
+#answerButton{
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 24px;
+}
+#correctBox, #incorrectBox{
+    background: rgba(168, 252, 157, 0.89);
+    border: 4px solid whitesmoke;
+}
