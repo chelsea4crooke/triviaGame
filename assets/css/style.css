@@ -27,12 +27,10 @@ p{
     border: 8px solid whitesmoke;
     background: rgba(168, 252, 157, 0.89);
     padding: 50px;
+    text-align: center;
 }
-#answerButton{
+#answerButton , #startButton, #resetButton{
     font-family: 'Shadows Into Light', cursive;
-    font-size: 24px;
-}
-#correctBox, #incorrectBox{
-    background: rgba(168, 252, 157, 0.89);
-    border: 4px solid whitesmoke;
+    font-size: 36px;
+    color: black;
 }
