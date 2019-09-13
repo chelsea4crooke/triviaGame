@@ -89,10 +89,8 @@ $(document).ready(function () {
      for(var i = 0; i < questions.length; i++){
          holder.push(questions[i]);
      }
+     $("#starimg").hide();
  });
- $(".answerButton").on("click", function (){
-     runTimer();
-     });
  console.log(questions.length);
  // Start timer
 function runTimer(){
