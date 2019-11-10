@@ -63,50 +63,63 @@ $(document).ready(function () {
         wrong: 0,
 
         countDown: function(){
-            this.counter--;
-            $("#timerSpot").text(this.counter);
-            if(this.counter === 0){
+            game.counter--;
+            $("#timerSpot").text(game.counter);
+            if(game.counter === 0){
                 console.log("Times Up!");
-                this.timesup();
+                game.timesup();
             }
         },
         loadQuestion: function(){
-            timer= setInterval(this.countDown.bind(this), 1000);
+            timer= setInterval(game.countDown, 1000);
+
             card.html("<h3>" + questions[this.currentQuest].question + "</h3>");
+
             for(var i=0; i < questions[this.currentQuest].options.length; i++){
-                card.append("<button class= 'answer-btn' 'data-name'" + questions[this.currentQuest].options[i] + "'>" + questions[this.currentQuest].options[i] + "</button>");
+                card.append("<button class= 'answer-btn' 'data-name='" + questions[this.currentQuest].options[i] + "'>" + questions[this.currentQuest].options[i] + "</button>");
             }
         },
         nextQuestion: function(){
-            this.counter = window.countStartNum;
-            $("#counter-num").text(this.counter);
-            this.currentQuest ++;
-            this.loadQuestion.bind(this)();
+            game.counter = countStartNum;
+            $("#counter-num").text(game.counter);
+            game.currentQuest ++;
+            game.loadQuestion();
         },
         timeUp: function(){
-            clearInterval(window.timer);
-            $("#counter-num").text(this.counter);
+
+            clearInterval(timer);
+
+            $("#counter-num").html(game.counter);
+
             card.html("<h3> You're out of time!</h3>");
-            card.append("<h4> The correct answer is: " + questions[this.currentQuest].correctAnswer + "</h4>");
-            card.append(questions[this.currentQuest].image
-            );
-            if(this.currentQuest === questions.length - 1){
-                setTimeout(this.results, 3 * 1000);
+            card.append("<h4> The correct answer is: " + questions[this.currentQuest].correctAnswer);
+            card.append(questions[this.currentQuest].image + "</h4>");
+
+            if(game.currentQuest === questions.length - 1){
+                setTimeout(game.results, 3 * 1000);
             }else{
-                setTimeout(this.nextQuestion, 3 * 1000);
+                setTimeout(game.nextQuestion, 3 * 1000);
             }
         },
+
         results: function(){
-            clearInterval(window.timer);
+
+            clearInterval(timer);
+
             card.html("<h3> All done, here's your stats </h3>");
-            $("#counter-num").text(this.counter);
-            card.append("<h4> Correct Answers: " + this.correct + "</h4>");
-            card.append("<h4> Wrong Answers: " + this.wrong + "</h4>");
-            card.append("<h4> Unanswered: " + (questions.length - (this.wrong + this.correct)) + "</h4>");
+
+            $("#counter-num").text(game.counter);
+
+            card.append("<h4> Correct Answers: " + game.correct + "</h4>");
+
+            card.append("<h4> Wrong Answers: " + game.wrong + "</h4>");
+
+            card.append("<h4> Unanswered: " + (questions.length - (game.wrong + game.correct)) + "</h4>");
+
             card.append("<br><button id= 'start-over'> Try again? </button>");
         },
         clicked: function(e){
-            clearInterval(window.timer);
+            clearInterval(timer);
             if($(e.target).attr("data-name") === questions[this.currentQuest].correctAnswer){
                 this.answeredRight();
             }else{
@@ -114,26 +127,34 @@ $(document).ready(function () {
             }
         },
         answeredWrong: function(){
-            this.wrong ++;
-            clearInterval(window.timer);
+
+            game.wrong++;
+
+            clearInterval(timer);
+
             card.html("<h3>MMM... Not really </h3>");
-            card.append("<h3> The right answer was: " + questions[this.currentQuest].correctAnswer + "</h3>");
-            card.append(questions[this.currentQuest].image);
-            if(this.currentQuest === questions.length -1){
-                setTimeout(this.results.bind(this), 3 * 1000);
+            card.append("<h3> The right answer was: " + questions[game.currentQuest].correctAnswer + "</h3>");
+            card.append(questions[game.currentQuest].image);
+
+            if(game.currentQuest === questions.length -1){
+                setTimeout(game.results, 3 * 1000);
             }else{
-                setTimeout(this.nextQuestion.bind(this), 3 * 1000);
+                setTimeout(game.nextQuestion, 3 * 1000);
             }
         },
         answeredRight: function(){
-            this.correct ++;
-            clearInterval(window.timer);
+
+            game.correct++;
+
+            clearInterval(timer);
+
             card.html("<h3>YAY! Way to go, you smart!!</h3>");
-            card.append(questions[this.currentQuest].image);
-            if(this.currentQuest === questions.length - 1){
-                setTimeout(this.results.bind(this), 3 * 1000);
+            card.append(questions[game.currentQuest].image);
+
+            if(game.currentQuest === questions.length - 1){
+                setTimeout(game.results, 3 * 1000);
             }else{
-                setTimeout(this.nextQuestion.bind(this), 3 * 1000);
+                setTimeout(game.nextQuestion, 3 * 1000);
             }
         },
         reset: function(){
@@ -145,15 +166,18 @@ $(document).ready(function () {
         }
     };
 // Click Events //
-    $(document).on("click", "#resetButton", game.reset.bind(game));
-    $(document).on("click", ".answer-btn", function(e){
-        game.clicked.bind(game, e)();
+    $(document).on("click", "#start-over", function(){
+        game.reset();
     });
+
+    $(document).on("click", ".answer-btn", function(e){
+        game.clicked(e);
+    });
+
     $(document).on("click", "#startButton", function(){
         $("#questionBox").prepend("<h2> Time left: <span id= 'counter-num'>30</span>seconds</h2>");
-        game.loadQuestion.bind(game)();
+        game.loadQuestion();
         $("#starting").hide();
         $("#startButton").hide();
-        $("#resetButton").hide();
     });
 });
