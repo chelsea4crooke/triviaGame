@@ -65,9 +65,9 @@ $(document).ready(function () {
         countDown: function(){
             game.counter--;
             $("#timerSpot").text(game.counter);
-            if(game.counter === 0){
+            if(this.counter === 0){
                 console.log("Times Up!");
-                game.timesup();
+                this.timesup();
             }
         },
         loadQuestion: function(){
