@@ -1,39 +1,44 @@
 body{
-    background-image: url("../images/200w.webp");
-    background-repeat: repeat;
+    background-image: url("newback.jpg");
+    background-size: cover;
     width: 100%;
     height: 100%;
-    font-family: 'Modak', cursive;
+    font-family: 'Allerta Stencil', sans-serif;
+    color: #FAB3A9;
 }
 h1{
     text-align: center;
     font-size: 54px;
-    opacity: 1;
+    opacity: 0.8;
+    color: #FAB3A9;
 }
 p{
     text-align: center;
     font-size: 24px;
+    color: #FAB3A9;
 }
 .jumbo{
-    border: 8px solid whitesmoke;
-    background: rgba(168, 252, 157, 0.89);
+    border: 1px solid #5F0F40;
+    background: #5F0F40;
 }
-#timeBox{
-    border: 4px solid whitesmoke;
-    background: rgba(168, 252, 157, 0.89);
+#timerSpot{
+    background: #5F0F40;
     padding: 10px;
+    text-align: center;
+    color: rgb(211, 81, 64);
 }
 #questionBox{
-    border: 8px solid whitesmoke;
-    background: rgba(168, 252, 157, 0.89);
+    border: 4px solid #5F0F40;
+    background: #5F0F40;
     padding: 50px;
     text-align: center;
+    color: #FAB3A9;
 }
 #answerButton , #startButton, #resetButton{
     font-family: 'Shadows Into Light', cursive;
     font-size: 36px;
-    color: black;
+    color: rgb(211, 81, 64);
 }
-#startimg{
-    border: 4px solid whitesmoke;
+#starting{
+    border: 2px solid rgb(211, 81, 64);
 }
