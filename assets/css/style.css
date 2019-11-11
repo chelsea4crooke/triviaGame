@@ -34,11 +34,21 @@ p{
     text-align: center;
     color: #FAB3A9;
 }
-#answerButton , #startButton, #resetButton{
+#startButton, #start-over{
     font-family: 'Shadows Into Light', cursive;
     font-size: 36px;
     color: rgb(211, 81, 64);
 }
 #starting{
     border: 2px solid rgb(211, 81, 64);
+}
+.answer-btn{
+    font-family: 'Shadows Into Light', cursive;
+    background-color: rgb(211, 81, 64);
+    color: #5F0F40;
+    font-size: 24px;
+    padding: 8px;
+    margin: 0 auto 0 auto;
+    width: 120px;
+    line-height: 20px;
 }
