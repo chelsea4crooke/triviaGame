@@ -33,7 +33,7 @@ $(document).ready(function () {
         },  {
         question: "Who discovered X-rays?",
         options: ["Wilhelm Roentgen" , "Albert Einstein" , "Isaac Newton" , "Nikola Tesla"],
-        correctAnswer: "Wilheml Roentgen", 
+        correctAnswer: "Wilhelm Roentgen", 
         },  {
         question: "(_____) is used in cameras for night vision and in medical treatments.", 
         options: ["Ultraviolet Rays" , "X-rays" , "Gamma Rays" , "Infared Rays"],
