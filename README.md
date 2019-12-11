@@ -1,4 +1,5 @@
 **Trivia Game**
+
     Javascript Assignment 2
 
 **About the App:**
