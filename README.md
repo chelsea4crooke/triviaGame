@@ -36,3 +36,5 @@
     4. Css
     5. Bootstrap
     6. Timed Intervals
+    7. GitHub
+    8. Git
