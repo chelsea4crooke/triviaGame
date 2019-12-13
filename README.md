@@ -12,13 +12,13 @@ The player will have a limited time to play the game/ answer each Light Spectrum
 
 ### **Step by Step Instructions:**
 
-    1. Open the game page link.
-    2. Take a moment to read the greeting and see the theme, click the start button to      begin the trivia game.
-    3. You will have 30 seconds for each question.
-    4. If you do not answer in time it will be counted towards the unanswered question      tally on the results screen and the correct answered will be given.
-    5. If you answer correct or incorrect they will be tallied respectively and the         correct answers shown.
-    6. Do your best and enjoy the game.
-    7. The last screen will show the results from the entire game.
+1. Open the game page link.
+2. Take a moment to read the greeting and see the theme, click the start button to      begin the trivia game.
+3. You will have 30 seconds for each question.
+4. If you do not answer in time it will be counted towards the unanswered question      tally on the results screen and the correct answered will be given.
+5. If you answer correct or incorrect they will be tallied respectively and the         correct answers shown.
+6. Do your best and enjoy the game.
+7. The last screen will show the results from the entire game.
 
 #### **Summary:**
 
@@ -30,11 +30,11 @@ https://chelsea4crooke.github.io/triviaGame/
 
 ### **Technologies Used:**
 
-    1. jQuery
-    2. Javascript
-    3. Html
-    4. Css
-    5. Bootstrap
-    6. Timed Intervals
-    7. GitHub
-    8. Git
+1. jQuery
+2. Javascript
+3. Html
+4. Css
+5. Bootstrap
+6. Timed Intervals
+7. GitHub
+8. Git
